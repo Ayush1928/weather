@@ -1,0 +1,7 @@
+.app {
+  text-align: center;
+  background-image: url("./Images/Background.png");
+  background-size: cover;
+  min-height: 100%;
+}
+

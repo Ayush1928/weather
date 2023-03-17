@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.box{
+    display: flex;
+}
+
+.box1 {
+    background-color:black;
+    opacity: 85%;
+    height: 75vh;
+    width: 35vw;
+    color: white;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+hr{
+    margin-left: 3vw;
+    margin-right: 3vw;
+    height: 10px;
+    color: white;
+}
+
+.box2 {
+    background-color: black;
+    opacity: 85%;
+    height: 75vh;
+    width: 25vw;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.clock{
+    font-size:6vh;
+}
+
+.temperature{
+    font-size: 10vh;
+    padding-right: 6vw;
+}
+
+.table1{
+    margin-right: 5vw ;
+}
+
+.feels{
+    font-size:3vh;
+}
+
+.weather{
+    display: flex;
+    justify-content: center;
+}

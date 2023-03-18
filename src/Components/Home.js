@@ -7,7 +7,7 @@ import WeatherContext from "./WeatherContext";
 
 const Home = () => {
   const context = useContext(WeatherContext);
-  const { weather, getWeather, getLocation, locationTimer, setLocationTimer } = context;
+  const { weather, getWeather, getLocation ,weatherIcon } = context;
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -25,16 +25,17 @@ const Home = () => {
         });
     } else {
       alert("Geolocation not available");
-    }
-  }, []); 
+    }// eslint-disable-next-line
+  }, [weatherIcon]); 
+  
 
-  useEffect(() => {
-    const timerID = setInterval(
-      () => getWeather(weather.lat, weather.lon),
-      6000
-    );
-    clearInterval(timerID);
-  }, []);
+  // useEffect(() => {
+  //   const timerID = setInterval(
+  //     () => getWeather(weather.lat, weather.lon),
+  //     6000
+  //   );
+  //   clearInterval(timerID);
+  // }, []);
 
   if (weather.temperature) {
     return (

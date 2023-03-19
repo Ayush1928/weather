@@ -7,35 +7,26 @@ import WeatherContext from "./WeatherContext";
 
 const Home = () => {
   const context = useContext(WeatherContext);
-  const { weather, getWeather, getLocation ,weatherIcon } = context;
+  const { weather, getWeather, getLocation } = context;
 
   useEffect(() => {
     if (navigator.geolocation) {
       getLocation()
         //If user allow location service then will fetch data & send it to get-weather function.
         .then((position) => {
-          getWeather(position.coords.latitude, position.coords.longitude);
+          getWeather("", position.coords.latitude, position.coords.longitude);
         })
         .catch((err) => {
           //If user denied location service then standard location weather will le shown on basis of latitude & latitude.
-          getWeather(51.5072, 0.1276);
+          getWeather("", 51.5072, 0.1276);
           alert(
             "You have disabled location service. Allow 'This APP' to access your location. Your current location will be used for calculating Real time weather."
           );
         });
     } else {
       alert("Geolocation not available");
-    }// eslint-disable-next-line
-  }, [weatherIcon]); 
-  
-
-  // useEffect(() => {
-  //   const timerID = setInterval(
-  //     () => getWeather(weather.lat, weather.lon),
-  //     6000
-  //   );
-  //   clearInterval(timerID);
-  // }, []);
+    } // eslint-disable-next-line
+  }, []);
 
   if (weather.temperature) {
     return (

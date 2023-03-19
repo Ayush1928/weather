@@ -1,14 +1,18 @@
-import React , {useContext} from "react";
+import React , { useContext } from "react";
 import "./Home.css";
 import WeatherContext from "./WeatherContext";
 
 const Searchbar = () => {
   const context = useContext(WeatherContext);
-  const { handleSearch, setQuery , query} = context;
+  const { getWeather , setSearch , search } = context;
+
+  const handleOnClick = (event) => {
+    event.preventDefault();
+    getWeather(search);
+  }
   return (
     <div>
-      <nav className="navbar my-4" style={{ backgroundBlendMode: "normal" }}>
-        <div className="container-fluid">
+        <div className="container-fluid my-4">
           <form
             className="d-flex mx-auto"
             role="search"
@@ -19,15 +23,17 @@ const Searchbar = () => {
               type="search"
               placeholder="Enter Location"
               aria-label="Search"
-              onChange={(e) => setQuery(e.target.value)}
-              value={query}
+              value={search}
+              onChange = {(event) => setSearch(event.target.value)}
             />
-            <button className="btn btn-outline-dark" type="submit" onClick={handleSearch}>
+            <button className="search btn btn-outline-dark" type="button" onClick={handleOnClick}>
               <i className="fa-solid fa-magnifying-glass"></i>
             </button>
+            {/* <button className="search btn btn-outline-dark mx-2" type="submit">
+              <i className="fa-solid fa-location-dot" onClick={()=>{handleLocation()}}></i>
+            </button> */}
           </form>
         </div>
-      </nav>
     </div>
   );
 };

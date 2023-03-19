@@ -39,13 +39,7 @@ const dateBuilder = (d) => {
 const Box1 = () => {
   
   const context = useContext(WeatherContext);
-  const { weather , weatherIcon } = context;
-  const defaults = {
-    icon: "CLEAR_DAY",
-    color: "white",
-    size: 80,
-    animate: true,
-  };
+  const { weather } = context;
 
   return (
     <div className="box1">
@@ -59,10 +53,10 @@ const Box1 = () => {
         </div>
         <div>
           <ReactAnimatedWeather
-            icon={weatherIcon}
-            color={defaults.color}
-            size={defaults.size}
-            animate={defaults.animate}
+            icon={weather.icon}
+            color="white"
+            size={80}
+            animate={true}
           />
           <h3>{weather.main}</h3>
         </div>

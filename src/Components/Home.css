@@ -18,6 +18,8 @@
     color: white;
     padding-top: 2vh;
     padding-bottom: 2vh;
+    border-top-left-radius: 6%;
+    border-bottom-left-radius: 6%;
 }
 
 hr{
@@ -35,6 +37,8 @@ hr{
     color: white;
     display: flex;
     align-items: center;
+    border-top-right-radius: 6%;
+    border-bottom-right-radius: 6%;
 }
 
 .clock{
@@ -57,4 +61,20 @@ hr{
 .weather{
     display: flex;
     justify-content: center;
+}
+
+.search{
+    background-color: white;
+}
+
+.search:hover{
+    background-color: black;
+}
+
+.search i{
+    color: black;
+}
+
+.search:hover i{
+    color: white;
 }

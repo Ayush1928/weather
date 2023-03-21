@@ -35,11 +35,11 @@ const Box2 = () => {
           </tr>
           <tr>
             <td>Sunrise</td>
-            <td>{time1.toLocaleTimeString("default").slice(0,4)} AM</td>
+            <td>{time1.toLocaleTimeString().slice(0,4)} AM</td>
           </tr>
           <tr>
             <td>Sunset</td>
-            <td>{time2.toLocaleTimeString("default").slice(0,4)} PM</td>
+            <td>{time2.toLocaleTimeString().slice(0,4)} PM</td>
           </tr>
         </tbody>
       </table>

@@ -1,70 +1,43 @@
-import React , { useContext } from "react";
+import React, { useContext } from "react";
 import ReactAnimatedWeather from "react-animated-weather";
-import Clock from "react-live-clock";
 import WeatherContext from "./WeatherContext";
 
-const dateBuilder = (d) => {
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  let day = days[d.getDay()];
-  let date = d.getDate();
-  let month = months[d.getMonth()];
-  let year = d.getFullYear();
-
-  return `${day}, ${date} ${month} ${year}`;
-};
-
 const Box1 = () => {
-  
   const context = useContext(WeatherContext);
   const { weather } = context;
-
   return (
     <div className="box1">
-      <h1>{weather.city}</h1>
+      <h1 className="city" style={{ fontSize: "8vh" }}>
+        {weather.city}
+      </h1>
       <h3>{weather.country}</h3>
-      <br />
-      <br />
       <div className="weather">
         <div className="temperature">
-          {weather.temperature}°C<div className="feels">Feels like {weather.feelstemp}°C</div>
+          {weather.temperature}°C
+          <div className="feels">Feels like {weather.feelstemp}°C</div>
         </div>
-        <div>
+        <div className="weathericon">
           <ReactAnimatedWeather
             icon={weather.icon}
             color="white"
-            size={80}
+            size={100}
             animate={true}
           />
           <h3>{weather.main}</h3>
         </div>
+        <div className="min-max">
+          <div className="max-temp">
+            <i className="fa-solid fa-arrow-up"></i>&nbsp;Max &nbsp;
+            {weather.temp_max}°C
+          </div>
+          <div className="min-temp">
+            <i className="fa-solid fa-arrow-down"></i>
+            &nbsp;Min {weather.temp_min}°C
+          </div>
+        </div>
       </div>
       <br />
       <br />
-      <Clock className="clock" format={"hh:mm:ss A"} ticking={true} />
-      <div className="current-date">{dateBuilder(new Date())}</div>
     </div>
   );
 };

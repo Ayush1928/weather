@@ -1,6 +1,7 @@
 import WeatherContext from "./WeatherContext";
 import React, { useState } from "react";
 import apiKey from "./apiKey";
+
 const WeatherState = (props) => {
   const [weather, setWeather] = useState({
     lat: 0,
@@ -17,10 +18,11 @@ const WeatherState = (props) => {
     country: "",
     main: "",
     icon: "",
+    temp_min:0,
+    temp_max:0
   });
 
   const [search, setSearch] = useState("");
-
   const getLocation = async (options) => {
     return new Promise(function (resolve, reject) {
       navigator.geolocation.getCurrentPosition(resolve, reject, options);
@@ -30,9 +32,9 @@ const WeatherState = (props) => {
   //Fetching Weather and Updating weather state
   const getWeather = async (city = "", lat, lon) => {
     if (city !== "") {
-      var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey.apiKey1}`;
+      var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey.apiKey2}`;
     } else {
-      url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey.apiKey1}`;
+      url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey.apiKey2}`;
     }
     
     const data = await fetch(url);
@@ -51,6 +53,8 @@ const WeatherState = (props) => {
       city: response.name,
       country: response.sys.country,
       main: response.weather[0].main,
+      temp_min:Math.round(response.main.temp_min)-273,
+      temp_max:Math.round(response.main.temp_max)-273
     };
     setWeather(weatherData);
   
@@ -66,6 +70,9 @@ const WeatherState = (props) => {
         icon = "FOG";
         break;
       case "Rain":
+        icon = "RAIN";
+        break;
+      case "Thunderstorm":
         icon = "RAIN";
         break;
       case "Snow":
@@ -98,7 +105,7 @@ const WeatherState = (props) => {
         getWeather,
         getLocation,
         search,
-        setSearch,
+        setSearch
       }}
     >
       {props.children}

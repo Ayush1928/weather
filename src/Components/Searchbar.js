@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext , useRef } from "react";
 import "./Home.css";
 import WeatherContext from "./WeatherContext";
 
@@ -6,8 +6,16 @@ const Searchbar = () => {
   const context = useContext(WeatherContext);
   const { getWeather, setSearch, search, getLocation } = context;
 
-  const handleOnClick = (event) => {
-    event.preventDefault();
+  const buttonRef = useRef(null);
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      buttonRef.current.click();
+      event.preventDefault();
+    }
+  };
+
+  const handleOnClick = () => {
     getWeather(search);
   };
 
@@ -41,11 +49,13 @@ const Searchbar = () => {
               aria-label="Search"
               value={search}
               onChange={(event) => setSearch(event.target.value)}
+              onKeyDown={handleKeyDown}
             />
             <button
               className="search btn btn-outline-dark"
               type="button"
               onClick={handleOnClick}
+              ref={buttonRef}
             >
               <i className="fa-solid fa-magnifying-glass"></i>
             </button>

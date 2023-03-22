@@ -28,13 +28,18 @@ const Home = () => {
 
   if (weather.temperature) {
     return (
-      <div className="container">
-        <Searchbar className="searchbar" />
-        <div className="box">
-          <Box1 />
-          <Box2 />
+      <>
+        <div className="container">
+          <Searchbar className="searchbar" />
+          <div className="box">
+            <Box1 />
+            <Box2 />
+          </div>
+          <div className="footer">
+            <h6>Developed By <span>Ayush</span> | <a href="https://github.com/Ayush1928" rel="noreferrer" target="_blank">Github</a> | <a href="https://www.linkedin.com/in/ayush-bansal-559914214" rel="noreferrer" target="_blank">LinkedIn</a></h6>
+          </div>
         </div>
-      </div>
+      </>
     );
   } else {
     return (

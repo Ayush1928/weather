@@ -113,11 +113,11 @@
 
 .loading-2-h3 {
     color: white;
-    margin-left: 5vw ;
+    margin-left: 5vw;
     margin-right: 5vw;
 }
 
-.loader{
+.loader {
     height: 50vh;
 }
 
@@ -127,6 +127,23 @@
 
 .searchbar-box input {
     width: 30vw;
+}
+
+.footer {
+    margin-top: 1vh;
+    color: white;
+}
+
+.footer h6 {
+    font-weight: 100;
+}
+.footer span {
+    font-weight: 600;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 967px) {
@@ -171,9 +188,9 @@
         margin-top: 5vh;
     }
 
-    .loadingbox{
-        width:70vw;
-        height:85vh;
+    .loadingbox {
+        width: 70vw;
+        height: 85vh;
     }
 
     .loader {
@@ -192,8 +209,8 @@
         align-items: center;
     }
 
-    .loadingbox{
-        width:80vw;
-        height:85vh;
+    .loadingbox {
+        width: 80vw;
+        height: 85vh;
     }
 }

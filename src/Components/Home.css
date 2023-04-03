@@ -1,3 +1,8 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -34,19 +39,17 @@
 }
 
 .box1 h1 {
-    height: "auto";
-    max-height: "50vh";
-    line-height: "1.2";
-    display: "flex";
-    justify-content: "center";
-    overflow: "hidden";
-    white-space: "pre-wrap";
-    overflow-wrap: "break-word";
+    height: auto;
+    line-height: 1;
+    overflow: hidden;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 .city {
     margin-top: 5vh;
-    font-size: 4rem;
+    font-size: 2.75rem;
+    text-align: center;
 }
 
 .temperature {
@@ -54,7 +57,7 @@
     padding-bottom: 2vw;
     flex: 0 0 50%;
     align-self: center;
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 
 .weathericon {

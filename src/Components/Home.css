@@ -34,7 +34,6 @@
 }
 
 .box1 h1 {
-    font-size: "3rem";
     height: "auto";
     max-height: "50vh";
     line-height: "1.2";
@@ -47,6 +46,7 @@
 
 .city {
     margin-top: 5vh;
+    font-size: 4rem;
 }
 
 .temperature {
@@ -54,6 +54,7 @@
     padding-bottom: 2vw;
     flex: 0 0 50%;
     align-self: center;
+    font-size: 4rem;
 }
 
 .weathericon {

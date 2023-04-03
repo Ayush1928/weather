@@ -7,7 +7,9 @@ const Box1 = () => {
   const { weather } = context;
   return (
     <div className="box1">
-      <h1 className="city" style={{ fontSize: "8vh" }}>
+      <h1
+        className="city"
+      >
         {weather.city}
       </h1>
       <h3>{weather.country}</h3>

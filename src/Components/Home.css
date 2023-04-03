@@ -33,6 +33,18 @@
     align-items: center;
 }
 
+.box1 h1 {
+    font-size: "3rem";
+    height: "auto";
+    max-height: "50vh";
+    line-height: "1.2";
+    display: "flex";
+    justify-content: "center";
+    overflow: "hidden";
+    white-space: "pre-wrap";
+    overflow-wrap: "break-word";
+}
+
 .city {
     margin-top: 5vh;
 }
@@ -137,9 +149,11 @@
 .footer h6 {
     font-weight: 100;
 }
+
 .footer span {
     font-weight: 600;
 }
+
 .footer a {
     color: white;
     text-decoration: none;
@@ -163,13 +177,13 @@
 
     .box1 {
         width: 70vw;
-        height: 85vh
+        height: auto;
     }
 
     .box2 {
         width: 70vw;
         align-items: center;
-        height: 60vh
+        height: auto;
     }
 
     .table1 {
@@ -202,7 +216,6 @@
 @media screen and (max-width: 325px) {
     .box1 {
         width: 80vw;
-        height: 85vh
     }
 
     .box2 {
